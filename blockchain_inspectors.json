@@ -1,0 +1,5 @@
+{
+  "bitcoin": "https://blockchain.info/q/addressbalance/",
+  "ethereum": "https://api.blockcypher.com/v1/eth/main/addrs/ ... /balance",
+  "ripple": "https://data.ripple.com/v2/accounts/ ... /balances?&limit=1"
+}
