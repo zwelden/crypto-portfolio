@@ -5,9 +5,13 @@ namespace App\Console;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 use App\Jobs\GetCryptoInfo;
+use App\Jobs\UpdateAssets;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
 use App\Crypto;
+use App\Asset;
+use App\CryptoApi\CryptoHandler;
+use App\CryptoApi\Cryptos\CoinRepo;
 
 class Kernel extends ConsoleKernel
 {
@@ -30,24 +34,12 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
-       $schedule->call(function () {
-         $apiAddress = "https://api.coinmarketcap.com/v1/ticker/?limit=10";
-         $client = new Client();
-         $result = $client->request('GET', $apiAddress);
-         $data = json_decode($result->getBody());
+       $schedule->job(new GetCryptoInfo)->everyMinute();
 
-         foreach ($data as $coin) {
-           $crypto = Crypto::where('name', $coin->name)
-                  ->where('symbol', $coin->symbol)
-                  ->first();
-            if (! $crypto == null) {
-                $crypto->update([
-                  'latest_price' => $coin->price_usd,
-                  'current_rank' => $coin->rank
-                ]);
-            }
-         }
-       })->everyMinute();
+       // update asset ballances
+       $schedule->job(new UpdateAssets('Bitcoin', 1))->hourly();
+       $schedule->job(new UpdateAssets('Bitcoin Cash', 1))->hourly();
+       $schedule->job(new UpdateAssets('Stellar', 1))->hourly();
     }
 
     /**

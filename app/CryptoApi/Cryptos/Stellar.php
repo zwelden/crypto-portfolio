@@ -29,7 +29,13 @@ class Stellar
 
     return $wallet_balance;
   }
+
+  public static function instantiate()
+  {
+    return new static;
+  }
 }
 
 
 // test GATB5F7BAC6TC5IDGBVWTP6KV3OD4RXLQCJSI2BTRJAYWU6MZABAZNLJ
+// test GB6YPGW5JFMMP2QB2USQ33EUWTXVL4ZT5ITUNCY3YKVWOJPP57CANOF3 <- lots of activity

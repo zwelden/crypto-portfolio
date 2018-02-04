@@ -11,10 +11,18 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use App\Http\Controllers\CryptoController;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
+use App\Crypto;
 
 class GetCryptoInfo implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+
+    /**
+     *
+     * Coinmarketcap.com api address
+     *
+     */
+    protected $apiAddress = 'https://api.coinmarketcap.com/v1/ticker/?limit=10';
 
     /**
      * Create a new job instance.
@@ -23,7 +31,7 @@ class GetCryptoInfo implements ShouldQueue
      */
     public function __construct()
     {
-        // $this->apiAddress = 'https://api.coinmarketcap.com/v1/ticker/?limit=10';
+      // ..
     }
 
     /**
@@ -33,9 +41,20 @@ class GetCryptoInfo implements ShouldQueue
      */
     public function handle()
     {
-        $apiAddress = "https://api.coinmarketcap.com/v1/ticker/?limit=10";
-        $client = new Client();
-        $result = $client->request('GET', $apiAddress);
-        CryptoController::setTestData($result->getBody());
+      $client = new Client();
+      $result = $client->request('GET', $this->apiAddress);
+      $data = json_decode($result->getBody());
+
+      foreach ($data as $coin) {
+        $crypto = Crypto::where('name', $coin->name)
+               ->where('symbol', $coin->symbol)
+               ->first();
+         if (! $crypto == null) {
+             $crypto->update([
+               'latest_price' => $coin->price_usd,
+               'current_rank' => $coin->rank
+             ]);
+         }
+      }
     }
 }

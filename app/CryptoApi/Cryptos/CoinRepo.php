@@ -3,6 +3,7 @@
 namespace App\CryptoApi\Cryptos;
 
 use App\CryptoApi\CryptoApi;
+use App\CryptoApi\Cryptos\Stellar;
 
 class CoinRepo
 {
@@ -54,6 +55,7 @@ class CoinRepo
             'Ripple' => CryptoApi::instantiate(static::$coin_data['Ripple']),
             'Cardano' => CryptoApi::instantiate(static::$coin_data['Cardano']),
             'Bitcoin Cash' => CryptoApi::instantiate(static::$coin_data['Bitcoin Cash']),
+            'Stellar' => Stellar::instantiate(),
         ]);
 
     return $coins;
@@ -65,6 +67,7 @@ class CoinRepo
 // test account: 1EBHA1ckUWzNKN7BMfDwGTx6GKEbADUozX
 // test account: 1CiAzyf5JFxDUm28oBNxt3TMsTi1EW7CLZ
 // test account: 1EBHA1ckUWzNKN7BMfDwGTx6GKEbADUozX
+// test account: 1NDyJtNTjmwk5xPNhjgAMu4HDHigtobu1s <- lots of activity
 
 //cardano
 // test address: DdzFFzCqrht6HeUvMHcx4Cg92L9srNj1g4rDM5AG7ESfPENiVVRxcWhJTiEw5JpEPebi3LbxgSrkNqiTGZGhEG2sbpDJJqoWYhENbQ8E
@@ -81,4 +84,4 @@ class CoinRepo
 
 // Bitcoin cash
 // 17CzhFvGwH6TT46JtzhnhMpTw4mHYpEGCR
-// 1AhWi2gpuqWRWxx2ymedpcwi4ACznaBeYD 
+// 1AhWi2gpuqWRWxx2ymedpcwi4ACznaBeYD

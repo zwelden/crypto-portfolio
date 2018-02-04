@@ -13,4 +13,9 @@ class Crypto extends Model
       'latest_price',
       'current_rank'
     ];
+
+    public function assets()
+    {
+      return $this->hasMany(Asset::class);
+    }
 }
