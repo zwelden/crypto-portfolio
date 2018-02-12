@@ -35,5 +35,8 @@ class CryptoHandler
     $wallet_balance = $coin->getBalance($address);
     $asset->wallet_balance = $wallet_balance;
     $asset->save();
+
+    // check for children
+    // Asset::where(parent = address) :: update
   }
 }

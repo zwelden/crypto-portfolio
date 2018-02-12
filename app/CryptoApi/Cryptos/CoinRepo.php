@@ -4,6 +4,7 @@ namespace App\CryptoApi\Cryptos;
 
 use App\CryptoApi\CryptoApi;
 use App\CryptoApi\Cryptos\Stellar;
+use App\CryptoApi\Cryptos\Ethereum;
 
 class CoinRepo
 {
@@ -12,7 +13,8 @@ class CoinRepo
       'api_prefix' => 'https://chain.so/api/v2/get_address_balance/LTC/',
       'api_postfix' => '',
       'divisor' => 1,
-      'balance_route' => 'data->confirmed_balance'
+      'balance_route' => 'data->confirmed_balance',
+      'is_child_chain' => false
     ],
     'Bitcoin' => [
       'api_prefix' => 'https://blockchain.info/q/addressbalance/',
@@ -20,29 +22,26 @@ class CoinRepo
       'divisor' => 100000000.00,
       'balance_route' => ''
     ],
-    'Ethereum' => [
-      'api_prefix' => 'https://api.blockcypher.com/v1/eth/main/addrs/',
-      'api_postfix' => '/balance',
-      'divisor' => 1000000000000000000.00,
-      'balance_route' => 'balance'
-    ],
     'Ripple' => [
       'api_prefix' => 'https://data.ripple.com/v2/accounts/',
       'api_postfix' => '/balances?&limit=1',
       'divisor' => 1,
-      'balance_route' => 'balances[0]->value'
+      'balance_route' => 'balances[0]->value',
+      'is_child_chain' => false
     ],
     'Cardano' => [
       'api_prefix' => 'https://cardanoexplorer.com/api/addresses/summary/',
       'api_postfix' => '',
       'divisor' => 1000000.00,
-      'balance_route' => 'Right->caBalance->getCoin'
+      'balance_route' => 'Right->caBalance->getCoin',
+      'is_child_chain' => false
     ],
     'Bitcoin Cash' => [
       'api_prefix' => 'https://bch-chain.api.btc.com/v3/address/',
       'api_postfix' => '',
       'divisor' => 100000000.00,
-      'balance_route' => 'data->balance'
+      'balance_route' => 'data->balance',
+      'is_child_chain' => false
     ]
   ];
 
@@ -51,7 +50,7 @@ class CoinRepo
     $coins = collect([
             'Litecoin' => CryptoApi::instantiate(static::$coin_data['Litecoin']),
             'Bitcoin' => CryptoApi::instantiate(static::$coin_data['Bitcoin']),
-            'Ethereum' => CryptoApi::instantiate(static::$coin_data['Ethereum']),
+            'Ethereum' => Ethereum::instantiate(),
             'Ripple' => CryptoApi::instantiate(static::$coin_data['Ripple']),
             'Cardano' => CryptoApi::instantiate(static::$coin_data['Cardano']),
             'Bitcoin Cash' => CryptoApi::instantiate(static::$coin_data['Bitcoin Cash']),

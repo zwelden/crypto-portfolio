@@ -13,6 +13,7 @@ class CryptoApi
   public $api_postfix;
   public $divisor;
   public $balance_route;
+  public $is_child_chain;
 
   public function getBalance($wallet_address) {
     $apiAddress = $this->api_prefix . $wallet_address . $this->api_postfix;
@@ -50,6 +51,7 @@ class CryptoApi
     $coin->api_postfix = $coin_data['api_postfix'];
     $coin->divisor = $coin_data['divisor'];
     $coin->balance_route = $coin_data['balance_route'];
+    $coin->is_child_chain = $coin_data['is_child_chain'];
 
     return $coin;
   }
