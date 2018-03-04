@@ -22,7 +22,7 @@ class GetCryptoInfo implements ShouldQueue
      * Coinmarketcap.com api address
      *
      */
-    protected $apiAddress = 'https://api.coinmarketcap.com/v1/ticker/?limit=10';
+    protected $apiAddress = 'https://api.coinmarketcap.com/v1/ticker/?limit=100';
 
     /**
      * Create a new job instance.
@@ -46,15 +46,14 @@ class GetCryptoInfo implements ShouldQueue
       $data = json_decode($result->getBody());
 
       foreach ($data as $coin) {
-        $crypto = Crypto::where('name', $coin->name)
-               ->where('symbol', $coin->symbol)
-               ->first();
-         if (! $crypto == null) {
-             $crypto->update([
-               'latest_price' => $coin->price_usd,
-               'current_rank' => $coin->rank
-             ]);
-         }
+        Crypto::updateOrCreate([
+          'name' => $coin->name,
+          'symbol' => $coin->symbol
+        ],
+        [
+          'latest_price' => $coin->price_usd,
+          'current_rank' => $coin->rank
+        ]);
       }
     }
 }

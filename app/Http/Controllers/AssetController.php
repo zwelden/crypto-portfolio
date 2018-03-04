@@ -26,19 +26,15 @@ class AssetController extends Controller
     public function store()
     {
       $this->validate(request(), [
-        'address' => 'required',
         'portfolio_id' => 'required',
-        'crypto_id' => 'required'
+        'crypto_id' => 'required',
+        'wallet_balance' => 'required'
       ]);
 
-      $crypto = Crypto::find(request('crypto_id'));
-      $wallet_balance = CryptoHandler::getBalance($crypto->name, request('address'));
-
       Asset::create([
-        'address' => request('address'),
         'portfolio_id' => request('portfolio_id'),
         'crypto_id' => request('crypto_id'),
-        'wallet_balance' => $wallet_balance
+        'wallet_balance' => request('wallet_balance')
       ]);
 
       return redirect('/portfolios/' . request('portfolio_id'));

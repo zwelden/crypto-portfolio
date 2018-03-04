@@ -17,8 +17,8 @@
     @endif
   </div>
   <div class="form-group">
-    <label for="address">Wallet Address: </label>
-    <input type="text" name="address" value="">
+    <label for="wallet_balance">Wallet Ballence: </label>
+    <input type="number" min="0" step="0.0000001" name="wallet_balance" value="">
   </div>
   <div class="form-group-hidden">
     <input type="hidden" name="portfolio_id" value="{{ $portfolio->id }}">

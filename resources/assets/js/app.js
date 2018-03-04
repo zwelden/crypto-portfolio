@@ -21,5 +21,5 @@ window.Vue = require('vue');
 //     el: '#app'
 // });
 
-require('./crypto-info/cryptoInfo');
+require('./crypto-info/portfolio-total');
 // require('./crypto-info/apiHandler');

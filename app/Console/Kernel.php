@@ -37,9 +37,9 @@ class Kernel extends ConsoleKernel
        $schedule->job(new GetCryptoInfo)->everyMinute();
 
        // update asset ballances
-       $schedule->job(new UpdateAssets('Bitcoin', 1))->hourly();
-       $schedule->job(new UpdateAssets('Bitcoin Cash', 1))->hourly();
-       $schedule->job(new UpdateAssets('Stellar', 1))->hourly();
+       // $schedule->job(new UpdateAssets('Bitcoin', 1))->hourly();
+       // $schedule->job(new UpdateAssets('Bitcoin Cash', 1))->hourly();
+       // $schedule->job(new UpdateAssets('Stellar', 1))->hourly();
     }
 
     /**

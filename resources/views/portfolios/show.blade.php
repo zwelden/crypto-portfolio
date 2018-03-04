@@ -11,8 +11,8 @@
       <li>
         {{ $asset->crypto->name }}
         <span class="crypto-asset" data-assetid="{{ $asset->id }}" data-crypto="{{ $asset->crypto->name }}" data-address="{{ $asset->address }}">{{ $asset->wallet_balance }}</span>
-        - <span class="price-asset-{{ $asset->id }}">{{ $asset->crypto->latest_price }}</span>
-        - <span class="total-asset-{{ $asset->id }}">Total</span>
+        - <span class="price-asset-{{ $asset->id }}">${{ $asset->crypto->latest_price }}</span>
+        - <span class="asset-value total-asset-{{ $asset->id }}">${{ $asset->wallet_balance * $asset->crypto->latest_price }}</span>
         <form action="/portfolios/{{ $portfolio->id }}/assets/{{ $asset->id }}/remove" method="POST" style="display:inline-block">
           {{ csrf_field() }}
           <input type="submit" name="sumbit" value="Delete">

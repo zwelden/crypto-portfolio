@@ -21,9 +21,6 @@ class CreateCryptosTable extends Migration
             $table->text('category')->nullable();
             $table->integer('current_rank')->default(9999);
             $table->float('latest_price')->default(0);
-            $table->boolean('has_parent_chain'); // if true require parent_chain and contract_address
-            $table->text('parent_chain')->nullable();
-            $table->text('contract_address')->nullable();
         });
     }
 

@@ -17,14 +17,6 @@
     <input type="text" name="category" value="">
   </div>
   <div class="form-group">
-    <label for="block_explorer_api_prefix">Block Explorer API prefix:</label>
-    <input type="block_explorer_api_prefix" name="block_explorer_api_prefix" value="">
-  </div>
-  <div class="form-group">
-    <label for="block_explorer_api_postfix">Block Explorer API postfix:</label>
-    <input type="block_explorer_api_postfix" name="block_explorer_api_postfix" value="">
-  </div>
-  <div class="form-group">
     <input type="submit" name="" value="Add Crypto">
   </div>
 </form>

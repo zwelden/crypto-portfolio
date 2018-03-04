@@ -18,7 +18,6 @@ class CreateAssetsTable extends Migration
             $table->timestamps();
             $table->integer('crypto_id');
             $table->integer('portfolio_id');
-            $table->text('address');
             $table->double('wallet_balance');
         });
     }
