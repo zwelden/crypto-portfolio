@@ -19,6 +19,8 @@ Route::post('/portfolios/{portfolio}/remove', 'PortfolioController@delete');
 
 Route::get('/portfolios/{portfolio}/addAsset', 'AssetController@create');
 Route::post('/assets', 'AssetController@store');
+Route::get('/assets/{asset}', 'AssetController@edit');
+Route::post('/assets/{asset}', 'AssetController@update');
 Route::post('/portfolios/{portfolio}/assets/{asset}/remove', 'AssetController@delete');
 
 Route::get('/cryptos', 'CryptoController@index');

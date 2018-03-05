@@ -13,6 +13,7 @@
         <span class="crypto-asset" data-assetid="{{ $asset->id }}" data-crypto="{{ $asset->crypto->name }}" data-address="{{ $asset->address }}">{{ $asset->wallet_balance }}</span>
         - <span class="price-asset-{{ $asset->id }}">${{ $asset->crypto->latest_price }}</span>
         - <span class="asset-value total-asset-{{ $asset->id }}">${{ $asset->wallet_balance * $asset->crypto->latest_price }}</span>
+        <a href="/assets/{{ $asset->id }}"><button type="button" name="button">Edit</button></a>
         <form action="/portfolios/{{ $portfolio->id }}/assets/{{ $asset->id }}/remove" method="POST" style="display:inline-block">
           {{ csrf_field() }}
           <input type="submit" name="sumbit" value="Delete">
