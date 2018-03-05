@@ -30150,7 +30150,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 (function () {
   var portfolioTotalField = document.querySelector('.assets-total');
   if (portfolioTotalField) {
-    var assetValues = document.querySelectorAll('.asset-value');
+    var assetValues = document.querySelectorAll('.asset-item .asset-value');
     var portfolioTotal = 0;
 
     for (var i = 0; i < assetValues.length; i++) {

@@ -3,7 +3,30 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
 // Variables
-@import "variables";
+// @import "variables";
 
 // Bootstrap
-@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+// @import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+//general
+@import "general/normalize";
+
+// settings
+@import "settings/layout";
+@import "settings/colors";
+
+//layout
+@import "layout/layout";
+
+// utilities
+@import "utilities/utilities";
+
+// elemenents
+
+
+// objects
+
+
+// components
+@import "components/section--top-menu-bar";
+@import "components/section--asset-list";

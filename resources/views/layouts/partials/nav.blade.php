@@ -1,24 +1,24 @@
 <div class="nav-container">
-  <nav>
+  <nav class="top-header-menu">
+    <div class="home-link">
+      <a href="/">Home</a>
+    </div>
     <ul>
-      <li>
-        <a href="/">Home</a>
-      </li>
-      <li>
+      <li class="">
         <a href="/portfolios">Portfolios</a>
       </li>
       @if (Auth::user())
-        <li>
+        <li class="">
           <form class="" action="/logout" method="post">
             {{ csrf_field() }}
-            <input type="submit" name="submit" value="logout">
+            <input type="submit" name="submit" value="Logout">
           </form>
         </li>
       @else
-        <li>
+        <li class="">
           <a href="/register">Register</a>
         </li>
-        <li>
+        <li class="">
           <a href="/login">Login</a>
         </li>
       @endif

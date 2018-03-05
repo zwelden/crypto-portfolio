@@ -1,0 +1,47 @@
+.nav-container {
+  background: $color-blue;
+}
+.top-header-menu {
+  color: $color-eggshell;
+  max-width: $max-width;
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  font-size: 1.2rem;
+
+  a, input {
+    color: #333;
+    opacity: .8;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 2px;
+    text-decoration: none;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+  }
+
+  .home-link,
+  li {
+    display: inline-block;
+    padding: 10px 15px 8px;
+
+    &:hover {
+      a, input {
+        border-bottom: 2px solid #333;
+      }
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+}

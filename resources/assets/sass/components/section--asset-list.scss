@@ -1,0 +1,73 @@
+.asset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  line-height: 1;
+
+  .asset-list-header,
+  .asset-item {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    .asset-type,
+    .asset-balance,
+    .asset-price,
+    .asset-value,
+    .asset-controls {
+      padding: 20px 10px 18px;
+    }
+
+    .asset-type {
+      width: 30%;
+    }
+
+    .asset-balance {
+      width: 15%;
+    }
+
+    .asset-price {
+      width: 15%;
+    }
+
+    .asset-value {
+      width: 20%;
+    }
+
+    .asset-controls {
+      width: 20%;
+    }
+  }
+
+  .asset-list-header {
+    .asset-type,
+    .asset-balance,
+    .asset-price,
+    .asset-value,
+    .asset-controls {
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+
+  .asset-item {
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+
+    .asset-type,
+    .asset-balance,
+    .asset-price,
+    .asset-value{
+      border-right: 1px solid #ddd;
+    }
+
+    .asset-balance,
+    .asset-price,
+    .asset-value,
+    .asset-controls {
+      text-align: center;
+    }
+  }
+}
