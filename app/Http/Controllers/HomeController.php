@@ -31,7 +31,6 @@ class HomeController extends Controller
           }
       }
 
-      $page_title = 'Dashboard';
-      return view('dashboard.index', compact('page_title'));
+      return redirect('/dashboard');
     }
 }

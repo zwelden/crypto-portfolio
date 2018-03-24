@@ -12,6 +12,8 @@
 */
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::Get('/dashboard', 'DashboardController@index');
+
 Route::get('/portfolios/new', 'PortfolioController@create');
 Route::post('/portfolios', 'PortfolioController@store');
 Route::get('/portfolios/{portfolio}', 'PortfolioController@show');

@@ -3,13 +3,12 @@
 @section ('content')
 
 <h2>Portfolios</h2>
-@if (Auth::user())
 <a href="/portfolios/new">Create Portfolio</a>
-@endif
-@if (Auth::user() && count(Auth::user()->portfolios) > 0)
+
+@if (count($portfolio_data) > 0)
   <ul>
-    @foreach (Auth::user()->portfolios as $portfolio)
-      <li>{{ $portfolio->name}} <a href="/portfolios/{{ $portfolio->id }}">View</a> </li>
+    @foreach ($portfolio_data as $portfolio)
+      <li>{{ $portfolio['name'] }} : {{ $portfolio['value'] }} <a href="/portfolios/{{ $portfolio['id'] }}">View</a> </li>
     @endforeach
   </ul>
 @else

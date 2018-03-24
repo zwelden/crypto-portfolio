@@ -15,8 +15,8 @@ class PortfolioController extends Controller
 
     public function index ()
     {
-      $page_title = 'Dashboard';
-      return view('portfolios.index', compact('page_title'));
+      $page_title = 'Portfolios';
+      return view('portfolio.index', compact('page_title'));
     }
 
     public function create()
