@@ -20,6 +20,10 @@
     <label for="wallet_balance">Wallet Ballence: </label>
     <input type="number" min="0" step="0.0000001" name="wallet_balance" value="">
   </div>
+  <div class="form-group">
+    <label for="original_price">Original Value: </label>
+    <input type="number" min="0" step="0.0001" name="original_price" value="">
+  </div>
   <div class="form-group-hidden">
     <input type="hidden" name="portfolio_id" value="{{ $portfolio->id }}">
   </div>

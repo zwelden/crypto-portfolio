@@ -2,7 +2,7 @@
 
 @section ('content')
 
-<h1>Portfolios</h1>
+<h2>Portfolios</h2>
 @if (Auth::user())
 <a href="/portfolios/new">Create Portfolio</a>
 @endif

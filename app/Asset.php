@@ -8,7 +8,7 @@ use App\Crypto;
 
 class Asset extends Model
 {
-    protected $fillable = ['portfolio_id', 'crypto_id', 'wallet_balance'];
+    protected $fillable = ['portfolio_id', 'crypto_id', 'wallet_balance', 'original_price'];
 
     public function portfolio()
     {

@@ -19,6 +19,7 @@ class CreateAssetsTable extends Migration
             $table->integer('crypto_id');
             $table->integer('portfolio_id');
             $table->double('wallet_balance');
+            $table->float('original_price');
         });
     }
 

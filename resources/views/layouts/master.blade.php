@@ -11,8 +11,12 @@
   <body>
     @include('layouts.partials.nav')
     <div class="main-content-wrapper">
-      <h1>Page Title</h1>
-      
+      @if (! empty($page_title))
+        <h1>{{ $page_title }}</h1>
+      @else
+        <h1>No Page Title Set</h1>
+      @endif
+
       @yield('content')
     </div>
 

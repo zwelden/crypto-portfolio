@@ -31,10 +31,17 @@ class AssetController extends Controller
         'wallet_balance' => 'required'
       ]);
 
+      if (is_null(request('original_price'))) {
+        $original_price = Crypto::where('id', request('crypto_id'))->first()->latest_price;
+      } else {
+        $original_price = request('original_price');
+      }
+
       Asset::create([
         'portfolio_id' => request('portfolio_id'),
         'crypto_id' => request('crypto_id'),
-        'wallet_balance' => request('wallet_balance')
+        'wallet_balance' => request('wallet_balance'),
+        'original_price' => $original_price
       ]);
 
       return redirect('/portfolios/' . request('portfolio_id'));
@@ -47,11 +54,23 @@ class AssetController extends Controller
 
     public function update(Asset $asset)
     {
-      $this->validate(request(), [
-        'wallet_balance' => 'required'
-      ]);
 
-      $asset->update(['wallet_balance' => request('wallet_balance')]);
+      if (is_null(request('wallet_balance'))) {
+        $wallet_balance = $asset->wallet_balance;
+      } else {
+        $wallet_ballence = request('wallet_balance');
+      }
+
+      if (is_null(request('original_price'))) {
+        $original_price = $asset->original_price;
+      } else {
+        $original_price = request('original_price');
+      }
+
+      $asset->update([
+        'wallet_balance' => request('wallet_balance'),
+        'original_price' => request('original_price')
+      ]);
 
       return redirect('/portfolios/' . $asset->portfolio->id );
     }

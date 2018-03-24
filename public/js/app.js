@@ -30150,16 +30150,26 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 (function () {
   var portfolioTotalField = document.querySelector('.assets-total');
   if (portfolioTotalField) {
-    var assetValues = document.querySelectorAll('.asset-item .asset-value');
+    var assetItems = document.querySelectorAll('.asset-item');
     var portfolioTotal = 0;
-
-    for (var i = 0; i < assetValues.length; i++) {
-      var assetValueRaw = assetValues[i].innerText;
-      var assetValue = parseFloat(assetValueRaw.split('$')[1]);
+    var assetValueRaw;
+    var assetValue;
+    for (var i = 0; i < assetItems.length; i++) {
+      assetValueRaw = assetItems[i].querySelector('.asset-value').innerText;
+      assetValue = parseFloat(assetValueRaw.split('$')[1]);
       portfolioTotal += assetValue;
     }
 
     portfolioTotalField.innerText = '$' + portfolioTotal;
+
+    for (var j = 0; j < assetItems.length; j++) {
+      assetValueRaw = assetItems[j].querySelector('.asset-value').innerText;
+      assetValue = parseFloat(assetValueRaw.split('$')[1]);
+      var percentOfPortEl = assetItems[j].querySelector('.asset-port-percent');
+      var percentRaw = assetValue / portfolioTotal * 100;
+      var percent = Math.round(percentRaw, 2) + '%';
+      percentOfPortEl.innerText = percent;
+    }
   }
 })();
 
