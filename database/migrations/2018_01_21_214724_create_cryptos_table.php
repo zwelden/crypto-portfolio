@@ -17,7 +17,8 @@ class CreateCryptosTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('name')->unique();
-            $table->text('symbol');
+            $table->text('cmc_symbol');
+            $table->text('cc_api_symbol')->nullable();
             $table->text('category')->nullable();
             $table->integer('current_rank')->default(9999);
             $table->float('latest_price')->default(0);

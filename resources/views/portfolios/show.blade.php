@@ -23,7 +23,7 @@
         <span class="asset-balance">{{ $asset->wallet_balance }}</span>
         <span class="asset-price-original">${{ $asset->original_price }}</span>
         <span class="asset-price">${{ $asset->crypto->latest_price }}</span>
-        <span class="asset-value">${{ $asset->wallet_balance * $asset->crypto->latest_price }}</span>
+        <span class="asset-value">${{ round($asset->wallet_balance * $asset->crypto->latest_price, 2) }}</span>
         <span class="asset-change">{{ round((($asset->crypto->latest_price - $asset->original_price) / $asset->original_price) * 100, 2) }}&#37;</span>
         <span class="asset-port-percent"></span>
         <div class="asset-controls">

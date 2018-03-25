@@ -8,7 +8,8 @@ class Crypto extends Model
 {
     protected $fillable = [
       'name',
-      'symbol',
+      'cmc_symbol',
+      'cc_api_symbol',
       'category',
       'latest_price',
       'current_rank'

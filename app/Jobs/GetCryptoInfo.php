@@ -48,7 +48,7 @@ class GetCryptoInfo implements ShouldQueue
       foreach ($data as $coin) {
         Crypto::updateOrCreate([
           'name' => $coin->name,
-          'symbol' => $coin->symbol
+          'cmc_symbol' => $coin->symbol
         ],
         [
           'latest_price' => $coin->price_usd,

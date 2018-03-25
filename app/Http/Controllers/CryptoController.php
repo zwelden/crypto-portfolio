@@ -35,7 +35,7 @@ class CryptoController extends Controller
         $crypto->name = request('name');
       }
 
-      if (request('symbol')) {
+      if (request('cmc_symbol')) {
         $crypto->symbol = request('symbol');
       }
 
@@ -50,11 +50,11 @@ class CryptoController extends Controller
 
     public function store ()
     {
-      $this->validate(request(), ['name' => 'required', 'symbol' => 'required']);
+      $this->validate(request(), ['name' => 'required', 'cmc_symbol' => 'required']);
 
       Crypto::create([
         'name' => request('name'),
-        'symbol' => request('symbol'),
+        'cmc_symbol' => request('cmc_symbol'),
         'category' => request('category')
       ]);
 

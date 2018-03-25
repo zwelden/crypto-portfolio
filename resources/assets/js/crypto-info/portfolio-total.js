@@ -11,14 +11,14 @@
       portfolioTotal += assetValue;
     }
 
-    portfolioTotalField.innerText = '$' + portfolioTotal;
+    portfolioTotalField.innerText = '$' + portfolioTotal.toFixed(2);
 
     for (var j = 0; j < assetItems.length; j++) {
       assetValueRaw = assetItems[j].querySelector('.asset-value').innerText;
       assetValue = parseFloat(assetValueRaw.split('$')[1]);
       var percentOfPortEl = assetItems[j].querySelector('.asset-port-percent');
       var percentRaw = (assetValue / portfolioTotal) * 100;
-      var percent = Math.round(percentRaw, 2) + '%';
+      var percent = percentRaw.toFixed(2) + '%';
       percentOfPortEl.innerText = percent;
     }
   }
