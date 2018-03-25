@@ -1,9 +1,9 @@
 @extends ('layouts.master')
 
 @section ('content')
-<h1>Update Asset</h1>
+<h1>For {{ $asset->portfolio->name }}</h1>
 
-<h3>{{ $asset->crypto->name }}</h3>
+<h3>Asset Type: {{ $asset->crypto->name }}</h3>
 
 <form class="" action="/assets/{{ $asset->id }}" method="post">
   {{ csrf_field() }}

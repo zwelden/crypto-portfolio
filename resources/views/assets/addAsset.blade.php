@@ -1,7 +1,7 @@
 @extends ('layouts.master')
 
 @section ('content')
-<h1>Add Asset</h1>
+<h2>For {{ $portfolio->name }}</h2>
 
 <form class="" action="/assets" method="post">
   {{ csrf_field() }}

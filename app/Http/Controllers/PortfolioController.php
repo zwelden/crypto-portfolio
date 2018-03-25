@@ -26,7 +26,9 @@ class PortfolioController extends Controller
 
     public function show(Portfolio $portfolio)
     {
-      return view('portfolios.show', compact('portfolio'));
+      $page_title = 'Portfolio Overview';
+
+      return view('portfolios.show', compact('portfolio', 'page_title'));
     }
 
     public function store()

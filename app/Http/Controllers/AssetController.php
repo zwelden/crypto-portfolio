@@ -19,8 +19,9 @@ class AssetController extends Controller
 
     public function create(Portfolio $portfolio)
     {
+      $page_title = 'Add New Asset';
       $avaliableCryptos = Crypto::all();
-      return view('assets.addAsset', compact('portfolio', 'avaliableCryptos'));
+      return view('assets.addAsset', compact('portfolio', 'avaliableCryptos', 'page_title'));
     }
 
     public function store()
@@ -49,12 +50,12 @@ class AssetController extends Controller
 
     public function edit(Asset $asset)
     {
-      return view('assets.updateAsset', compact('asset'));
+      $page_title = 'Edit/Update Asset';
+      return view('assets.updateAsset', compact('asset', 'page_title'));
     }
 
     public function update(Asset $asset)
     {
-
       if (is_null(request('wallet_balance'))) {
         $wallet_balance = $asset->wallet_balance;
       } else {

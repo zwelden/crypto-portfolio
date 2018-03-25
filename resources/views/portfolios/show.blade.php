@@ -1,7 +1,7 @@
 @extends ('layouts.master')
 
 @section ('content')
-<h2>{{ $portfolio->name }}</h2>
+<h2>Portfolio Name: {{ $portfolio->name }}</h2>
 
 
 <a href="/portfolios/{{ $portfolio->id }}/addAsset">Add Asset</a>

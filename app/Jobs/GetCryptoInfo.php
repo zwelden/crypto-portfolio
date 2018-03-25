@@ -22,7 +22,7 @@ class GetCryptoInfo implements ShouldQueue
      * Coinmarketcap.com api address
      *
      */
-    protected $apiAddress = 'https://api.coinmarketcap.com/v1/ticker/?limit=100';
+    protected $apiAddress = 'https://api.coinmarketcap.com/v1/ticker/?limit=300';
 
     /**
      * Create a new job instance.

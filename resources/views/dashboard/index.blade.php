@@ -8,7 +8,11 @@
 @if (count($portfolio_data) > 0)
   <ul>
     @foreach ($portfolio_data as $portfolio)
-      <li>{{ $portfolio['name'] }} : {{ $portfolio['value'] }} <a href="/portfolios/{{ $portfolio['id'] }}">View</a> </li>
+      <li>
+        <span class="portfolio-name">{{ $portfolio['name'] }} </span>
+        <span class="portfolio-value-outer"> Current Value: <span class="portfolio-value">{{ $portfolio['value'] }}</span></span>
+        <a href="/portfolios/{{ $portfolio['id'] }}">View</a>
+      </li>
     @endforeach
   </ul>
 @else
