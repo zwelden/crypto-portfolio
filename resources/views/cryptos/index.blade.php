@@ -6,7 +6,11 @@
   @if (count($cryptos) > 0)
     <ul>
       @foreach ($cryptos as $crypto)
-        <li>{{ $crypto->current_rank }}  {{ $crypto->name }} {{ $crypto->latest_price }}</li>
+        <li>
+          <span>{{ $crypto->current_rank }}</span>
+          <span> <a href="/cryptos/{{ $crypto->id }}/edit">{{ $crypto->name }}</a></span>
+          <span>{{ $crypto->latest_price }}</span>
+        </li>
       @endforeach
     </ul>
   @else

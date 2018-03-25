@@ -22,4 +22,5 @@ window.Vue = require('vue');
 // });
 
 require('./crypto-info/portfolio-total');
+require('./crypto-info/crypto-select-field');
 // require('./crypto-info/apiHandler');

@@ -31,12 +31,8 @@ class CryptoController extends Controller
 
     public function update (Crypto $crypto)
     {
-      if (request('name')) {
-        $crypto->name = request('name');
-      }
-
-      if (request('cmc_symbol')) {
-        $crypto->symbol = request('symbol');
+      if (request('cc_api_symbol')) {
+        $crypto->cc_api_symbol = request('cc_api_symbol');
       }
 
       if (request('category')) {
