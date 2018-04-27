@@ -27,6 +27,7 @@ Route::post('/portfolios/{portfolio}/assets/{asset}/remove', 'AssetController@de
 
 Route::get('/cryptos', 'CryptoController@index');
 Route::get('/cryptos/new', 'CryptoController@create');
+Route::get('/cryptos/{crypto}', 'CryptoController@show');
 Route::get('/cryptos/{crypto}/edit', 'CryptoController@edit');
 Route::post('/cryptos/{crypto}', 'CryptoController@update');
 Route::post('/cryptos', 'CryptoController@store');

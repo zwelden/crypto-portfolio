@@ -24,6 +24,11 @@ class CryptoController extends Controller
       return view('cryptos.addCrypto');
     }
 
+    public function show ()
+    {
+      return view('cryptos.show');
+    }
+
     public function edit (Crypto $crypto)
     {
       return view('cryptos.edit', compact('crypto'));

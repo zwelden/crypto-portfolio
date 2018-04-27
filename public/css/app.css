@@ -377,6 +377,9 @@ template {
 html,
 body {
   font-size: 16px;
+  font-family: sans-serif;
+  background: #f0f0f4;
+  min-height: 100vh;
 }
 
 .main-content-wrapper {
@@ -584,5 +587,44 @@ body {
 .asset-list .asset-item .asset-port-percent,
 .asset-list .asset-item .asset-controls {
   text-align: center;
+}
+
+.login-panel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 320px;
+  min-height: 200px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 3px 30px #ccd;
+          box-shadow: 0 3px 30px #ccd;
+  padding: 15px;
+  background: #fff;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+}
+
+.login-panel .panel-heading {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: .3rem;
+}
+
+.login-panel .form-group {
+  margin-bottom: 10px;
+}
+
+.login-panel .form-group input {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.login-panel .form-group input[type="checkbox"] {
+  width: auto;
+}
+
+.login-panel .form-group .btn-link {
+  float: right;
 }
 

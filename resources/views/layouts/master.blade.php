@@ -13,8 +13,6 @@
     <div class="main-content-wrapper">
       @if (! empty($page_title))
         <h1>{{ $page_title }}</h1>
-      @else
-        <h1>No Page Title Set</h1>
       @endif
 
       @yield('content')
