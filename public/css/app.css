@@ -379,6 +379,7 @@ body {
   font-size: 16px;
   font-family: sans-serif;
   background: #f0f0f4;
+  background-size: cover;
   min-height: 100vh;
 }
 
@@ -407,7 +408,7 @@ body {
 }
 
 .nav-container {
-  background: #8dcdc1;
+  background: #abdca7;
 }
 
 .top-header-menu {
@@ -595,7 +596,7 @@ body {
   left: 50%;
   width: 320px;
   min-height: 200px;
-  border-radius: 10px;
+  border-radius: 4px;
   -webkit-box-shadow: 0 3px 30px #ccd;
           box-shadow: 0 3px 30px #ccd;
   padding: 15px;
@@ -607,24 +608,81 @@ body {
 .login-panel .panel-heading {
   text-align: center;
   font-size: 1.5rem;
-  margin-bottom: .3rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  color: #333;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .login-panel .form-group {
   margin-bottom: 10px;
 }
 
-.login-panel .form-group input {
+.login-panel .form-group input[type="email"],
+.login-panel .form-group input[type="password"] {
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  padding: 10px;
+  background: #f0f0f4;
+  border: none;
+  border-radius: 4px;
+}
+
+.login-panel .form-group input[type="email"]:focus,
+.login-panel .form-group input[type="password"]:focus {
+  outline: none;
+  -webkit-display: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  background: #ceebcb;
+}
+
+.login-panel .form-group .checkbox {
+  margin-bottom: 1rem;
+  font-size: .85rem;
 }
 
 .login-panel .form-group input[type="checkbox"] {
   width: auto;
 }
 
+.login-panel .form-group .btn-primary {
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: none;
+  background: #03a63c;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  padding: 10px 15px;
+  margin-bottom: .5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login-panel .form-group .btn-primary:hover {
+  background: #038d33;
+}
+
 .login-panel .form-group .btn-link {
-  float: right;
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid #03a63c;
+  background: none;
+  text-align: center;
+  width: 100%;
+  padding: 10px 15px;
+  color: #03a63c;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.login-panel .form-group .btn-link:hover {
+  border-color: #038d33;
+  color: #038d33;
 }
 
