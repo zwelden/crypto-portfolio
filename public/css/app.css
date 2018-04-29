@@ -472,17 +472,120 @@ body {
       flex-wrap: nowrap;
 }
 
+.portfolio-detail-leader-card {
+  width: 95%;
+  max-width: 400px;
+  margin: auto;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 3px 30px #ccd;
+          box-shadow: 0 3px 30px #ccd;
+  padding: 25px 10px;
+  background: linear-gradient(45deg, #E7FAED, #E7EFF9);
+}
+
+.portfolio-detail-leader-card h1,
+.portfolio-detail-leader-card h2,
+.portfolio-detail-leader-card h3,
+.portfolio-detail-leader-card h4 {
+  margin: 0;
+  text-align: center;
+  color: #333;
+}
+
+.portfolio-detail-leader-card h2 {
+  color: #777;
+  opacity: .8;
+}
+
+.total-card {
+  width: 95%;
+  max-width: 400px;
+  margin: auto;
+  margin-bottom: 1.5rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 3px 30px #ccd;
+          box-shadow: 0 3px 30px #ccd;
+  padding: 15px;
+  background: #fff;
+  display: block;
+}
+
+.total-card .assets-total,
+.total-card .assets-total-subtitle {
+  text-align: center;
+}
+
+.total-card .assets-total {
+  font-size: 1.75rem;
+  margin-bottom: .2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.total-card .assets-total-subtitle {
+  color: #777;
+}
+
+.add-asset-btn-wrapper {
+  width: 95%;
+  max-width: 400px;
+  margin: auto;
+  margin-bottom: 1.5rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.add-asset-btn-wrapper .btn-add-asset {
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: none;
+  background: #03a63c;
+  color: #fff;
+  text-align: center;
+  padding: 10px 15px;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-box-shadow: 0 3px 30px #ccd;
+          box-shadow: 0 3px 30px #ccd;
+}
+
+.add-asset-btn-wrapper .btn-add-asset:hover {
+  background: #038d33;
+}
+
 .asset-list {
   margin: 0;
   padding: 0;
   list-style: none;
-  width: 100%;
-  line-height: 1;
 }
 
-.asset-list .asset-list-header,
 .asset-list .asset-item {
-  width: 100%;
+  width: 95%;
+  max-width: 400px;
+  margin: auto;
+  margin-bottom: 1rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.asset-list .asset-item .asset-card {
+  border-radius: 4px;
+  -webkit-box-shadow: 0 3px 30px #ccd;
+          box-shadow: 0 3px 30px #ccd;
+  padding: 15px;
+  background: #fff;
+  display: block;
+}
+
+.asset-list .asset-item .asset-card .asset-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -490,104 +593,114 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: .75rem;
 }
 
-.asset-list .asset-list-header .asset-type,
-.asset-list .asset-list-header .asset-balance,
-.asset-list .asset-list-header .asset-price,
-.asset-list .asset-list-header .asset-price-original,
-.asset-list .asset-list-header .asset-value,
-.asset-list .asset-list-header .asset-change,
-.asset-list .asset-list-header .asset-port-percent,
-.asset-list .asset-list-header .asset-controls,
-.asset-list .asset-item .asset-type,
-.asset-list .asset-item .asset-balance,
-.asset-list .asset-item .asset-price,
-.asset-list .asset-item .asset-price-original,
-.asset-list .asset-item .asset-value,
-.asset-list .asset-item .asset-change,
-.asset-list .asset-item .asset-port-percent,
-.asset-list .asset-item .asset-controls {
-  padding: 20px 10px 18px;
+.asset-list .asset-item .asset-card .asset-header .asset-header-title span {
+  display: block;
 }
 
-.asset-list .asset-list-header .asset-type,
-.asset-list .asset-item .asset-type {
-  width: 25%;
+.asset-list .asset-item .asset-card .asset-header .asset-header-value {
+  font-size: 1.75rem;
+  color: #222;
 }
 
-.asset-list .asset-list-header .asset-balance,
-.asset-list .asset-item .asset-balance {
-  width: 10%;
+.asset-list .asset-item .asset-card .asset-header .asset-header-value .asset-value-currency-sign {
+  font-size: 1.3rem;
+  line-height: 1.75rem;
+  vertical-align: top;
 }
 
-.asset-list .asset-list-header .asset-price,
-.asset-list .asset-item .asset-price {
-  width: 10%;
-}
-
-.asset-list .asset-list-header .asset-price-original,
-.asset-list .asset-item .asset-price-original {
-  width: 10%;
-}
-
-.asset-list .asset-list-header .asset-value,
-.asset-list .asset-item .asset-value {
-  width: 15%;
-}
-
-.asset-list .asset-list-header .asset-change,
-.asset-list .asset-item .asset-change {
-  width: 10%;
-}
-
-.asset-list .asset-list-header .asset-port-percent,
-.asset-list .asset-item .asset-port-percent {
-  width: 10%;
-}
-
-.asset-list .asset-list-header .asset-controls,
-.asset-list .asset-item .asset-controls {
-  width: 15%;
-}
-
-.asset-list .asset-list-header .asset-type,
-.asset-list .asset-list-header .asset-balance,
-.asset-list .asset-list-header .asset-price,
-.asset-list .asset-list-header .asset-price-original,
-.asset-list .asset-list-header .asset-value,
-.asset-list .asset-list-header .asset-change,
-.asset-list .asset-list-header .asset-port-percent,
-.asset-list .asset-list-header .asset-controls {
+.asset-list .asset-item .asset-card .asset-header .asset-symbol {
+  font-size: 1.3rem;
   font-weight: bold;
+}
+
+.asset-list .asset-item .asset-card .asset-header .asset-name {
+  font-size: .85rem;
+  color: #777;
+}
+
+.asset-list .asset-item .asset-card .asset-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: .75rem;
+  color: #555;
+  padding: 10px 0;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.asset-list .asset-item .asset-card .asset-info .asset-info-section span {
+  display: block;
   text-align: center;
 }
 
-.asset-list .asset-item {
-  border: 1px solid #ccc;
-  margin-bottom: 10px;
+.asset-list .asset-item .asset-card .asset-info .asset-info-section .info-text {
+  font-size: .7rem;
+  color: #777;
 }
 
-.asset-list .asset-item .asset-type,
-.asset-list .asset-item .asset-balance,
-.asset-list .asset-item .asset-price,
-.asset-list .asset-item .asset-price-original,
-.asset-list .asset-item .asset-value,
-.asset-list .asset-item .asset-port-percent,
-.asset-list .asset-item .asset-change {
-  border-right: 1px solid #ddd;
+.asset-list .asset-item .asset-card .asset-controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.asset-list .asset-item .asset-balance,
-.asset-list .asset-item .asset-price,
-.asset-list .asset-item .asset-price-original,
-.asset-list .asset-item .asset-value,
-.asset-list .asset-item .asset-change,
-.asset-list .asset-item .asset-port-percent,
-.asset-list .asset-item .asset-controls {
+.asset-list .asset-item .asset-card .asset-controls .btn-edit {
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #03a63c;
   text-align: center;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #03a63c;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: .85rem;
+}
+
+.asset-list .asset-item .asset-card .asset-controls .btn-edit:hover {
+  background: #03a63c;
+  color: #fff;
+}
+
+.asset-list .asset-item .asset-card .asset-controls .btn-delete {
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #D14C33;
+  text-align: center;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #D14C33;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: .85rem;
+}
+
+.asset-list .asset-item .asset-card .asset-controls .btn-delete:hover {
+  background: #D14C33;
+  color: #fff;
 }
 
 .login-panel {
@@ -697,11 +810,7 @@ body {
   -webkit-box-shadow: 0 3px 30px #ccd;
           box-shadow: 0 3px 30px #ccd;
   padding: 15px;
-  background: #74ebd5;
-  /* fallback for old browsers */
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(-45deg, #AEC0D7, #B2E0C2);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(45deg, #E7FAED, #E7EFF9);
   margin-bottom: 2rem;
 }
 
