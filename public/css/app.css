@@ -686,3 +686,121 @@ body {
   color: #038d33;
 }
 
+.portfolio-list-wrapper {
+  width: 95%;
+  max-width: 600px;
+  margin: auto;
+}
+
+.portfolio-list-wrapper .leader-card {
+  border-radius: 4px;
+  -webkit-box-shadow: 0 3px 30px #ccd;
+          box-shadow: 0 3px 30px #ccd;
+  padding: 15px;
+  background: #74ebd5;
+  /* fallback for old browsers */
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(-45deg, #AEC0D7, #B2E0C2);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  margin-bottom: 2rem;
+}
+
+.portfolio-list-wrapper .leader-card h2 {
+  text-align: center;
+}
+
+.portfolio-list-wrapper .action-btns {
+  text-align: center;
+}
+
+.portfolio-list-wrapper .btn-create-portfolio {
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: none;
+  background: #03a63c;
+  color: #fff;
+  text-align: center;
+  margin: auto;
+  padding: 10px 15px;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-box-shadow: 0 3px 30px #ccd;
+          box-shadow: 0 3px 30px #ccd;
+  margin-bottom: 2rem;
+}
+
+.portfolio-list-wrapper .btn-create-portfolio:hover {
+  background: #038d33;
+}
+
+.portfolio-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.portfolio-list-item {
+  width: 45%;
+}
+
+.portfolio-card {
+  border-radius: 4px;
+  -webkit-box-shadow: 0 3px 30px #ccd;
+          box-shadow: 0 3px 30px #ccd;
+  padding: 15px;
+  background: #fff;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.portfolio-card:hover .actions .btn-view {
+  background: #03a63c;
+  color: #fff;
+}
+
+.portfolio-card .portfolio-name,
+.portfolio-card .portfolio-value-outer {
+  text-align: center;
+  font-size: 1.3rem;
+  margin-bottom: .5rem;
+}
+
+.portfolio-card .portfolio-value {
+  color: #03a63c;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.portfolio-card .actions {
+  text-align: center;
+}
+
+.portfolio-card .actions .btn-view {
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #03a63c;
+  text-align: center;
+  margin: auto;
+  padding: 10px 15px;
+  border-radius: 4px;
+  border: 1px solid #03a63c;
+  text-decoration: none;
+  cursor: pointer;
+}
+
