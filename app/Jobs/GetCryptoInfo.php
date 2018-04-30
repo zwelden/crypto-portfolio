@@ -45,14 +45,23 @@ class GetCryptoInfo implements ShouldQueue
       $result = $client->request('GET', $this->apiAddress);
       $data = json_decode($result->getBody());
 
+      $count = 0;
+
       foreach ($data as $coin) {
+        if ($count < 10) {
+          print_r($coin->percent_change_1h);
+          $count++;
+        }
         Crypto::updateOrCreate([
           'name' => $coin->name,
           'cmc_symbol' => $coin->symbol
         ],
         [
           'latest_price' => $coin->price_usd,
-          'current_rank' => $coin->rank
+          'current_rank' => $coin->rank,
+          'percent_change_1h' => $coin->percent_change_1h,
+          'percent_change_24h' => $coin->percent_change_24h,
+          'percent_change_7d' => $coin->percent_change_7d,
         ]);
       }
     }

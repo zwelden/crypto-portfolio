@@ -409,6 +409,7 @@ body {
 
 .nav-container {
   background: #abdca7;
+  margin-bottom: 1.5rem;
 }
 
 .top-header-menu {
@@ -477,7 +478,6 @@ body {
   max-width: 400px;
   margin: auto;
   margin-bottom: 1.5rem;
-  margin-top: 1.5rem;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 4px;
@@ -603,15 +603,67 @@ body {
   display: block;
 }
 
-.asset-list .asset-item .asset-card .asset-header .asset-header-value {
+.asset-list .asset-item .asset-card .asset-header .asset-value-wrapper {
   font-size: 1.75rem;
   color: #222;
+  text-align: center;
 }
 
-.asset-list .asset-item .asset-card .asset-header .asset-header-value .asset-value-currency-sign {
+.asset-list .asset-item .asset-card .asset-header .asset-value-wrapper .asset-value-currency-sign {
   font-size: 1.3rem;
   line-height: 1.75rem;
   vertical-align: top;
+}
+
+.asset-list .asset-item .asset-card .asset-header .asset-pct-change-wrapper > span {
+  display: block;
+}
+
+.asset-list .asset-item .asset-card .asset-header .asset-pct-change-wrapper .asset-pct-change {
+  text-align: right;
+  font-size: 1.2rem;
+  position: relative;
+  font-weight: bold;
+}
+
+.asset-list .asset-item .asset-card .asset-header .asset-pct-change-wrapper .asset-pct-change.green {
+  color: #03a63c;
+}
+
+.asset-list .asset-item .asset-card .asset-header .asset-pct-change-wrapper .asset-pct-change.green::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 0;
+  width: 0;
+  border: 10px solid transparent;
+  border-bottom-color: #03a63c;
+  -webkit-transform: translateX(-120%) translateY(-75%);
+          transform: translateX(-120%) translateY(-75%);
+}
+
+.asset-list .asset-item .asset-card .asset-header .asset-pct-change-wrapper .asset-pct-change.red {
+  color: #D14C33;
+}
+
+.asset-list .asset-item .asset-card .asset-header .asset-pct-change-wrapper .asset-pct-change.red::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 0;
+  width: 0;
+  border: 10px solid transparent;
+  border-top-color: #D14C33;
+  -webkit-transform: translateX(-120%) translateY(-25%);
+          transform: translateX(-120%) translateY(-25%);
+}
+
+.asset-list .asset-item .asset-card .asset-header .asset-pct-change-wrapper .asset-pct-change-info {
+  color: #777;
+  font-size: .85rem;
+  text-align: right;
 }
 
 .asset-list .asset-item .asset-card .asset-header .asset-symbol {
@@ -699,6 +751,36 @@ body {
 }
 
 .asset-list .asset-item .asset-card .asset-controls .btn-delete:hover {
+  background: #D14C33;
+  color: #fff;
+}
+
+.delete-portfolio-form {
+  width: 95%;
+  max-width: 400px;
+  margin: auto;
+}
+
+.btn-delete-portfolio {
+  display: block;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: none;
+  background: #fff;
+  color: #D14C33;
+  text-align: center;
+  padding: 10px 15px;
+  border-radius: 4px;
+  border: 1px solid #D14C33;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-box-shadow: 0 3px 30px #ccd;
+          box-shadow: 0 3px 30px #ccd;
+  margin-bottom: 1rem;
+}
+
+.btn-delete-portfolio:hover {
   background: #D14C33;
   color: #fff;
 }
@@ -801,7 +883,7 @@ body {
 
 .portfolio-list-wrapper {
   width: 95%;
-  max-width: 600px;
+  max-width: 400px;
   margin: auto;
 }
 
@@ -823,14 +905,13 @@ body {
 }
 
 .portfolio-list-wrapper .btn-create-portfolio {
-  display: inline-block;
+  display: block;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border: none;
   background: #03a63c;
   color: #fff;
   text-align: center;
-  margin: auto;
   padding: 10px 15px;
   border-radius: 4px;
   text-decoration: none;
@@ -848,22 +929,10 @@ body {
   list-style: none;
   padding-left: 0;
   margin: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
 .portfolio-list-item {
-  width: 45%;
+  margin-bottom: 1rem;
 }
 
 .portfolio-card {

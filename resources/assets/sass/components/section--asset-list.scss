@@ -3,7 +3,6 @@
   max-width: 400px;
   margin: auto;
   margin-bottom: 1.5rem;
-  margin-top: 1.5rem;
   box-sizing: border-box;
   border-radius: 4px;
   box-shadow: 0 3px 30px #ccd;
@@ -108,14 +107,66 @@
           }
         }
 
-        .asset-header-value {
+        .asset-value-wrapper {
           font-size: 1.75rem;
           color: #222;
+          text-align: center;
 
           .asset-value-currency-sign {
             font-size: 1.3rem;
             line-height: 1.75rem;
             vertical-align: top;
+          }
+        }
+
+        .asset-pct-change-wrapper {
+          & > span {
+            display: block;
+          }
+
+          .asset-pct-change {
+            text-align: right;
+            font-size: 1.2rem;
+            position: relative;
+            font-weight: bold;
+
+            &.green {
+              color: $color-green-v2;
+
+              &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 50%;
+                height: 0;
+                width: 0;
+                border: 10px solid transparent;
+                border-bottom-color: $color-green-v2;
+                transform: translateX(-120%) translateY(-75%);
+              }
+            }
+
+            &.red {
+              color: $color-red;
+
+              &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 50%;
+                height: 0;
+                width: 0;
+                border: 10px solid transparent;
+                border-top-color: $color-red;
+                transform: translateX(-120%) translateY(-25%);
+              }
+            }
+          }
+
+          .asset-pct-change-info {
+            color: #777;
+            font-size: .85rem;
+            text-align: right;
           }
         }
 
@@ -193,5 +244,33 @@
         }
       }
     }
+  }
+}
+
+.delete-portfolio-form{
+  width: 95%;
+  max-width: 400px;
+  margin: auto;
+}
+
+.btn-delete-portfolio {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  background: $white;
+  color: $color-red;
+  text-align: center;
+  padding: 10px 15px;
+  border-radius: 4px;
+  border: 1px solid $color-red;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 3px 30px #ccd;
+  margin-bottom: 1rem;
+
+  &:hover {
+    background: $color-red;
+    color: $white;
   }
 }

@@ -22,6 +22,9 @@ class CreateCryptosTable extends Migration
             $table->text('category')->nullable();
             $table->integer('current_rank')->default(9999);
             $table->float('latest_price')->default(0);
+            $table->decimal('percent_change_1h')->default(0);
+            $table->decimal('percent_change_24h')->default(0);
+            $table->decimal('percent_change_7d')->default(0);
         });
     }
 

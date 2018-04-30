@@ -1,6 +1,6 @@
 .portfolio-list-wrapper {
   width: 95%;
-  max-width: 600px;
+  max-width: 400px;
   margin: auto;
 
   .leader-card {
@@ -20,13 +20,12 @@
   }
 
   .btn-create-portfolio {
-    display: inline-block;
+    display: block;
     box-sizing: border-box;
     border: none;
     background: $color-green-v2;
     color: #fff;
     text-align: center;
-    margin: auto;
     padding: 10px 15px;
     border-radius: 4px;
     text-decoration: none;
@@ -41,20 +40,14 @@
 
 }
 
-
-
 .portfolio-list {
   list-style: none;
   padding-left: 0;
   margin: 0;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content:  space-between;
 }
 
 .portfolio-list-item {
-  width: 45%;
+  margin-bottom: 1rem;
 }
 
 .portfolio-card {

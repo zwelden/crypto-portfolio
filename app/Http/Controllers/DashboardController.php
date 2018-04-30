@@ -28,7 +28,6 @@ class DashboardController extends Controller
 
   public function index ()
   {
-    $page_title = 'Dashboard';
     $user = \Auth::user();
     $portfolios = $user->portfolios;
     $portfolio_data = array();
@@ -45,6 +44,6 @@ class DashboardController extends Controller
       }
     }
     // dd($portfolio_data);
-    return view('dashboard.index', compact('page_title', 'portfolio_data'));
+    return view('dashboard.index', compact('portfolio_data'));
   }
 }

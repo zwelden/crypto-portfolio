@@ -12,7 +12,10 @@ class Crypto extends Model
       'cc_api_symbol',
       'category',
       'latest_price',
-      'current_rank'
+      'current_rank',
+      'percent_change_1h',
+      'percent_change_24h',
+      'percent_change_7d'
     ];
 
     public function assets()
