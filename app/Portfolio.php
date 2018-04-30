@@ -22,6 +22,12 @@ class Portfolio extends Model
 
     public function getPercentageChange() {
       $portfolio_assets = $this->assets;
+
+      // if there are no assets, return a 0% change;
+      if (count($portfolio_assets) == 0) {
+        return 0;
+      }
+
       $portfolio_total_current = 0;
       $portfolio_total_previous = 0;
 
@@ -36,6 +42,11 @@ class Portfolio extends Model
         $portfolio_total_previous += $previous_price;
       }
 
+      if ($portfolio_total_previous == 0) {
+        return 0;
+      }
+
+      // if the previous 24h portfolio total is 0, return a 0% change;
       $portfolio_pct_change = round((($portfolio_total_current - $portfolio_total_previous) / $portfolio_total_previous) * 100, 2);
 
       return $portfolio_pct_change;
