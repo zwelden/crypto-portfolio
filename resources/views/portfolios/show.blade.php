@@ -11,6 +11,10 @@
     <div class="assets-total">Total</div>
     <div class="assets-total-subtitle"> Portfolio Total</div>
    </div>
+   <div class="portfolio-pct-change-wrapper">
+     <span class="pct-change portfolio-pct-change">{{ $portfolio_pct_change }}%</span>
+     <span class="portfolio-pct-change-info">24 hr.</span>
+   </div>
 </div>
 
 <div class="add-asset-btn-wrapper">
@@ -32,7 +36,7 @@
               <span class="asset-value"><span class="asset-value-currency-sign">$</span>{{ round($asset->wallet_balance * $asset->crypto->latest_price, 2) }}</span>
             </div>
             <div class="asset-pct-change-wrapper">
-              <span class="asset-pct-change">{{ $asset->crypto->percent_change_24h }}%</span>
+              <span class="pct-change asset-pct-change">{{ $asset->crypto->percent_change_24h }}%</span>
               <span class="asset-pct-change-info">24 hr.</span>
             </div>
           </div>

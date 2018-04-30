@@ -30277,8 +30277,8 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /***/ (function(module, exports) {
 
 (function () {
-  if (document.querySelector('.asset-pct-change')) {
-    var percentChangeEls = document.querySelectorAll('.asset-pct-change');
+  if (document.querySelector('.pct-change')) {
+    var percentChangeEls = document.querySelectorAll('.pct-change');
 
     for (var i = 0; i < percentChangeEls.length; i++) {
       var prctChangeEl = percentChangeEls[i];

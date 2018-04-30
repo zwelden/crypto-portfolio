@@ -26,7 +26,9 @@ class PortfolioController extends Controller
 
     public function show(Portfolio $portfolio)
     {
-      return view('portfolios.show', compact('portfolio'));
+      $portfolio_pct_change = $portfolio->getPercentageChange();
+
+      return view('portfolios.show', compact('portfolio', 'portfolio_pct_change'));
     }
 
     public function store()

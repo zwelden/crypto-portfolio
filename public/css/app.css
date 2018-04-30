@@ -514,6 +514,7 @@ body {
   padding: 15px;
   background: #fff;
   display: block;
+  position: relative;
 }
 
 .total-card .assets-total,
@@ -530,6 +531,63 @@ body {
 
 .total-card .assets-total-subtitle {
   color: #777;
+}
+
+.total-card .portfolio-pct-change-wrapper {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.total-card .portfolio-pct-change-wrapper > span {
+  display: block;
+}
+
+.total-card .portfolio-pct-change-wrapper .portfolio-pct-change {
+  text-align: right;
+  font-size: 1.2rem;
+  position: relative;
+  font-weight: bold;
+}
+
+.total-card .portfolio-pct-change-wrapper .portfolio-pct-change.green {
+  color: #03a63c;
+}
+
+.total-card .portfolio-pct-change-wrapper .portfolio-pct-change.green::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 0;
+  width: 0;
+  border: 10px solid transparent;
+  border-bottom-color: #03a63c;
+  -webkit-transform: translateX(-120%) translateY(-75%);
+          transform: translateX(-120%) translateY(-75%);
+}
+
+.total-card .portfolio-pct-change-wrapper .portfolio-pct-change.red {
+  color: #D14C33;
+}
+
+.total-card .portfolio-pct-change-wrapper .portfolio-pct-change.red::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 0;
+  width: 0;
+  border: 10px solid transparent;
+  border-top-color: #D14C33;
+  -webkit-transform: translateX(-120%) translateY(-25%);
+          transform: translateX(-120%) translateY(-25%);
+}
+
+.total-card .portfolio-pct-change-wrapper .portfolio-pct-change-info {
+  color: #777;
+  font-size: .85rem;
+  text-align: right;
 }
 
 .add-asset-btn-wrapper {
@@ -740,17 +798,18 @@ body {
   display: inline-block;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  color: #D14C33;
+  color: #7c786a;
   text-align: center;
   padding: 4px 8px;
   border-radius: 4px;
-  border: 1px solid #D14C33;
+  border: 1px solid #7c786a;
   text-decoration: none;
   cursor: pointer;
   font-size: .85rem;
 }
 
 .asset-list .asset-item .asset-card .asset-controls .btn-delete:hover {
+  border: 1px solid #D14C33;
   background: #D14C33;
   color: #fff;
 }
@@ -768,11 +827,11 @@ body {
           box-sizing: border-box;
   border: none;
   background: #fff;
-  color: #D14C33;
+  color: #7c786a;
   text-align: center;
   padding: 10px 15px;
   border-radius: 4px;
-  border: 1px solid #D14C33;
+  border: 1px solid #7c786a;
   text-decoration: none;
   cursor: pointer;
   -webkit-box-shadow: 0 3px 30px #ccd;
@@ -781,6 +840,7 @@ body {
 }
 
 .btn-delete-portfolio:hover {
+  border: 1px solid #D14C33;
   background: #D14C33;
   color: #fff;
 }
@@ -944,6 +1004,7 @@ body {
   display: block;
   text-decoration: none;
   color: inherit;
+  position: relative;
 }
 
 .portfolio-card:hover .actions .btn-view {
@@ -959,9 +1020,14 @@ body {
 }
 
 .portfolio-card .portfolio-value {
-  color: #03a63c;
+  color: #555;
   font-weight: bold;
   font-size: 2rem;
+}
+
+.portfolio-card .portfolio-asset-count {
+  text-align: center;
+  margin-bottom: .5rem;
 }
 
 .portfolio-card .actions {
@@ -980,5 +1046,62 @@ body {
   border: 1px solid #03a63c;
   text-decoration: none;
   cursor: pointer;
+}
+
+.portfolio-card .portfolio-pct-change-wrapper {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.portfolio-card .portfolio-pct-change-wrapper > span {
+  display: block;
+}
+
+.portfolio-card .portfolio-pct-change-wrapper .portfolio-pct-change {
+  text-align: right;
+  font-size: 1.2rem;
+  position: relative;
+  font-weight: bold;
+}
+
+.portfolio-card .portfolio-pct-change-wrapper .portfolio-pct-change.green {
+  color: #03a63c;
+}
+
+.portfolio-card .portfolio-pct-change-wrapper .portfolio-pct-change.green::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 0;
+  width: 0;
+  border: 10px solid transparent;
+  border-bottom-color: #03a63c;
+  -webkit-transform: translateX(-120%) translateY(-75%);
+          transform: translateX(-120%) translateY(-75%);
+}
+
+.portfolio-card .portfolio-pct-change-wrapper .portfolio-pct-change.red {
+  color: #D14C33;
+}
+
+.portfolio-card .portfolio-pct-change-wrapper .portfolio-pct-change.red::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 0;
+  width: 0;
+  border: 10px solid transparent;
+  border-top-color: #D14C33;
+  -webkit-transform: translateX(-120%) translateY(-25%);
+          transform: translateX(-120%) translateY(-25%);
+}
+
+.portfolio-card .portfolio-pct-change-wrapper .portfolio-pct-change-info {
+  color: #777;
+  font-size: .85rem;
+  text-align: right;
 }
 

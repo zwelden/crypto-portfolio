@@ -58,6 +58,7 @@
   display: block;
   text-decoration: none;
   color: inherit;
+  position: relative;
 
   &:hover {
     .actions {
@@ -79,9 +80,14 @@
   }
 
   .portfolio-value {
-    color: $color-green-v2;
+    color: #555;
     font-weight: bold;
     font-size: 2rem;
+  }
+
+  .portfolio-asset-count {
+    text-align: center;
+    margin-bottom: .5rem;
   }
 
   .actions {
@@ -98,6 +104,61 @@
       border: 1px solid $color-green-v2;
       text-decoration: none;
       cursor: pointer;
+    }
+  }
+
+  .portfolio-pct-change-wrapper {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    > span {
+      display: block;
+    }
+
+    .portfolio-pct-change {
+      text-align: right;
+      font-size: 1.2rem;
+      position: relative;
+      font-weight: bold;
+
+      &.green {
+        color: $color-green-v2;
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 50%;
+          height: 0;
+          width: 0;
+          border: 10px solid transparent;
+          border-bottom-color: $color-green-v2;
+          transform: translateX(-120%) translateY(-75%);
+        }
+      }
+
+      &.red {
+        color: $color-red;
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 50%;
+          height: 0;
+          width: 0;
+          border: 10px solid transparent;
+          border-top-color: $color-red;
+          transform: translateX(-120%) translateY(-25%);
+        }
+      }
+    }
+
+    .portfolio-pct-change-info {
+      color: #777;
+      font-size: .85rem;
+      text-align: right;
     }
   }
 }

@@ -39,6 +39,8 @@ class DashboardController extends Controller
         $data['name'] = $portfolio->name;
         $data['value'] = $this->getPortfolioValue($portfolio);
         $data['id'] = $portfolio->id;
+        $data['percent_change'] = $portfolio->getPercentageChange();
+        $data['asset_count'] = count($portfolio->assets);
 
         $portfolio_data[] = $data;
       }

@@ -18,6 +18,11 @@
             <div class="portfolio-info">
               <div class="portfolio-name"><span>{{ $portfolio['name'] }}<span></div>
               <div class="portfolio-value-outer"><span class="portfolio-value">${{ $portfolio['value'] }}</span></div>
+              <div class="portfolio-asset-count"><span>Assets in Portfolio: {{ $portfolio['asset_count'] }}</span></div>
+            </div>
+            <div class="portfolio-pct-change-wrapper">
+              <span class="pct-change portfolio-pct-change">{{ $portfolio['percent_change'] }}%</span>
+              <span class="portfolio-pct-change-info">24 hr.</span>
             </div>
             <div class="actions">
               <button class="btn-view">View Portfolio</button>
